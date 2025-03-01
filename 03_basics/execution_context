@@ -1,0 +1,36 @@
+**************  Execution Context in JavaScript ************
+
+Execution context in JS is like a container where JS code runs. It determines how variables, functions, and objects are stored and accessed during code execution.
+
+There are two main types:
+1. Global Execution Context (GEC) – This is created when the script starts.
+2. Function Execution Context (FEC) – Created every time a function is called.
+
+Each execution context has:
+A Variable Environment (stores variables and function declarations)
+A Lexical Environment (keeps track of variable scope)
+
+Example:
+
+var name = "Alice";                      (Global variable)
+
+function greet() {
+    var greeting = "Hello";              (Function variable)
+    console.log(greeting + " " + name);
+}
+
+greet();                                 (Function execution context created here)
+
+
+
+1. Global Execution Context (GEC) is created first:
+name is stored in memory.
+greet function is stored in memory.
+
+2. When greet() is called:
+A new Function Execution Context (FEC) is created.
+greeting is stored inside this function's context.
+When the function completes, its execution context is removed.
+
+
+ "this" refers to the object that is executing the current function.
