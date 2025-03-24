@@ -8,7 +8,34 @@
 <body>
     <div class="bg-black">
      <h1>DOM learning on chai or code</h1>
+     <h2 class="second-heading">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h2>
      <p>Lorem ipsum dolor sit amet.</p>
     </div>
+    <ul>
+        <li class="list-item">one</li>
+        <li class="list-item">two</li>
+        <li class="list-item">three</li>
+        <li class="list-item">four</li>
+    </ul>
+
+    <script>
+        const myul=document.querySelector('ul')
+        myul.querySelector('ul')
+        const turngreen=myul.querySelector('li')
+        turngreen.style.backgroundColor="green"
+        turngreen.style.padding="10px"
+        turngreen.innerText="seven"
+        const templist=document.querySelectorAll('li')
+        templist[0].style.color="green"
+        templist.forEach(function (l){
+            l.style.backgroundColor="green"
+        })
+      const myH2=document.querySelectorAll('.second-heading')
+      myH2[0].innerText
+      myH2.forEach(function(h){
+        h.style.color="red"
+      })
+
+    </script>
 </body>
 </html>
