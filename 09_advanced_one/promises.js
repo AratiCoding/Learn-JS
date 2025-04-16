@@ -61,3 +61,50 @@ promiseFour.then((user)=>{
 }).catch(function(error){
     console.log(error);
 }).finally(()=>console.log("promise either resolved or rejected"));
+
+
+const promiseFive=new Promise(function(resolve,reject){
+    setTimeout(function(){
+        let error=true;
+        if(!error){
+            resolve({username:"arati",password:"123"});
+
+        }else{
+            reject("ERROR: something went wrong");
+        }
+    },1000)
+})
+
+async function consumePromiseFive(){
+    try{
+        const response=await promiseFive;
+    console.log(response);
+    }catch(error){
+        console.log(error);
+    }
+}
+consumePromiseFive()
+
+
+// async function getAllUsers(){
+//   try{
+//     const response=await fetch("https://jsonplaceholder.typicode.com/users");
+//     // console.log(response);
+//     const data=await response.json();
+//     console.log(data);
+//   }catch(error){
+//     console.log(error);
+//   }
+
+
+// }
+// getAllUsers()
+
+fetch("https://jsonplaceholder.typicode.com/users")
+.then((response)=>{
+    return response.json();
+})
+.then((data)=>{
+    console.log(data);
+})
+.catch((error)=>console.log(error))
