@@ -1,0 +1,20 @@
+//A closure is a function that can access variables
+// from its outer (enclosing) function even after
+// that outer function has returned.
+
+function outerFunction() {
+    let count = 0;
+  
+    function innerFunction() {
+      count++;
+      console.log("Count is:", count);
+    }
+  
+    return innerFunction;
+  }
+  
+  const myCounter = outerFunction(); // outerFunction runs and returns innerFunction
+  myCounter(); // Count is: 1
+  myCounter(); // Count is: 2
+  myCounter(); // Count is: 3
+  
